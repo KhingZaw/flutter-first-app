@@ -1,11 +1,19 @@
+import 'package:first_app/day_10/data/model/product_model.dart';
+import 'package:first_app/day_10/data/model/product_model_impl.dart';
+import 'package:first_app/day_10/screen/product.dart';
 import 'package:first_app/ninja/ninja_item_view/quote_card.dart';
-import 'package:first_app/day_6/The_Movie/homepage.dart';
 import 'package:flutter/material.dart';
 import 'ninja/Models/quote.dart';
 
-void main() => runApp(const MaterialApp(
-      home: MyApp(),
-    ));
+void main() {
+  runApp(const MaterialApp(
+    home: MyApp(),
+  ));
+  ProductModel _productModel = ProductModelImpl();
+  _productModel.getProduct().then((value) {
+    print("value=====>$value");
+  });
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,20 +21,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        //ninja_card
-        //home: NinjaCard(),
+      //ninja_card
+      //home: NinjaCard(),
 
-        //Day 2
-        //home: Container1(),
+      //Day 2
+      //home: Container1(),
 
-        //Day 4
-        //home: PaddingSizeBoxRowColumn(),
+      //Day 4
+      //home: PaddingSizeBoxRowColumn(),
 
-        //Day 5
-        //home: ImageWidget(),
+      //Day 5
+      //home: ImageWidget(),
 
-        //Day 6
-        home: TheMovieDB());
+      //Day 6
+      //home: TheMovieDB()
+
+      //Day 10
+      home: Product(),
+    );
   }
 }
 
